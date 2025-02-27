@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #message {
+        margin-top: 20px;
+        font-size: 20px;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event</h1>
+
+    <button id="clickButton">Click Me!</button>
+    <div id="message"></div>
+
+    <input type="text" id="inputField" />
+
+    <script>
+      // การจัดการ Event ด้วย onclick
+      document.getElementById('clickButton').onclick = function () {
+        document.getElementById('message').innerText = 'คลิกไปแล้ว!'
+      }
+
+      // การจัดการ Event ด้วย onmouseover
+      document.getElementById('clickButton').onmouseover = function () {
+        this.style.backgroundColor = 'lightblue'
+      }
+
+      // การจัดการ Event ด้วย onkeyup
+      document.getElementById('inputField').onkeyup = function () {
+        console.log('You typed: ' + this.value)
+      }
+
+      // การใช้ addEventListener
+      document
+        .getElementById('clickButton')
+        .addEventListener('click', function () {
+          alert('กดแล้วใช้ addEventListener')
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 25px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
+}
+
+h1, h2 {
+    font-size: 28px; /* ทำให้หัวข้อใหญ่ขึ้น */
+    color: #333;
+}
+
+input, button {
+    font-size: 18px; /* ขยายปุ่มและช่องป้อนข้อมูล */
+    padding: 10px;
+    margin: 5px;
+}

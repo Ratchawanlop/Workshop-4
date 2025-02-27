@@ -1,0 +1,71 @@
+<!-- formValidation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        button {
+            padding: 7px 15px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="submit">Submit</button>
+        <div class="error" id="errorMessage"></div>
+    </form>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.onsubmit = function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+
+            // ตรวจสอบอีเมล
+            if (!email.includes('@') || !email.endsWith('.com')) {
+                errorMessage.textContent = 'Email must contain "@" and end with ".com"';
+            } else {
+                errorMessage.textContent = '';
+                alert('Form submitted successfully!');
+                form.reset(); // รีเซ็ตฟอร์ม
+            }
+        };
+    </script>
+</body>
+</html>

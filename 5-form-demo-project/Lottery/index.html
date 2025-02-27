@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ระบบสุ่มเลขหวย</h1>
+        <button id="generateBtn">สุ่มเลข</button>
+
+        <h2>ลองทายเลขของคุณ</h2>
+        <input type="text" id="userGuess" placeholder="กรอกเลข 6 หลัก" maxlength="6">
+        <button id="checkBtn" disabled>ตรวจสอบ</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let lotteryNumber = '';
+
+        document.getElementById('generateBtn').addEventListener('click', function() {
+            lotteryNumber = generateLotteryNumber();
+            document.getElementById('result').textContent = 'เลขถูกสุ่มแล้ว! ตอนนี้คุณสามารถทายเลขได้.';
+            document.getElementById('checkBtn').disabled = false; // เปิดใช้งานปุ่มตรวจสอบ
+        });
+
+        document.getElementById('checkBtn').addEventListener('click', function() {
+            const userGuess = document.getElementById('userGuess').value;
+            if (userGuess.length !== 6 || isNaN(userGuess)) {
+                alert('กรุณากรอกเลข 6 หลักเท่านั้น');
+                return;
+            }
+            if (userGuess === lotteryNumber) {
+                document.getElementById('result').textContent = 'ยินดีด้วย! คุณทายถูกต้อง!';
+            } else {
+                document.getElementById('result').textContent = `คุณทายผิด! เลขที่ถูกต้องคือ: ${lotteryNumber}`;
+            }
+        });
+
+        function generateLotteryNumber() {
+            let number = '';
+            for (let i = 0; i < 6; i++) {
+                number += Math.floor(Math.random() * 10).toString();
+            }
+            return number;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Grade Calculator</h2>
+    <table>
+        <tr>
+            <th>รหัสวิชา</th>
+            <th>คะแนนที่ได้ (0 - 100)</th>
+        </tr>
+        <tr>
+            <td>CSI101</td>
+            <td><input type="number" id="CSI101" min="0" max="100"></td>
+        </tr>
+        <tr>
+            <td>CSI102</td>
+            <td><input type="number" id="CSI102" min="0" max="100"></td>
+        </tr>
+        <tr>
+            <td>CSI203</td>
+            <td><input type="number" id="CSI203" min="0" max="100"></td>
+        </tr>
+        <tr>
+            <td>CSI204</td>
+            <td><input type="number" id="CSI204" min="0" max="100"></td>
+        </tr>
+        <tr>
+            <td>CSI305</td>
+            <td><input type="number" id="CSI305" min="0" max="100"></td>
+        </tr>
+    </table>
+
+    <button onclick="calculateGPA()">คำนวณ GPA</button>
+
+    <h3 id="result"></h3>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

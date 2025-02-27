@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm Practice</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Algorithm Practice</h1>
+
+    <!-- Basic Algorithm -->
+    <h2>1. คำนวณพื้นที่วงกลม</h2>
+    <input type="number" id="radius" placeholder="ป้อนค่ารัศมี" />
+    <button onclick="calculateArea()">คำนวณ</button>
+    <p id="circleArea"></p>
+
+    <!-- Conditional Algorithm -->
+    <h2>2. ตรวจสอบอายุ</h2>
+    <input type="number" id="age" placeholder="ป้อนอายุ" />
+    <button onclick="checkAge()">ตรวจสอบ</button>
+    <p id="ageResult"></p>
+
+    <h2>3. ตรวจสอบเลขคู่หรือเลขคี่</h2>
+    <input type="number" id="number" placeholder="ป้อนตัวเลข" />
+    <button onclick="checkEvenOdd()">ตรวจสอบ</button>
+    <p id="evenOddResult"></p>
+
+    <!-- Loop Algorithm -->
+    <h2>4. แสดงเลข 1-10</h2>
+    <button onclick="showNumbers()">แสดง</button>
+    <p id="numberList"></p>
+
+    <h2>5. รับค่าจากผู้ใช้ (พิมพ์ exit เพื่อหยุด)</h2>
+    <button onclick="startInputLoop()">เริ่มรับค่า</button>
+    <p id="userInputs"></p>
+
+    <!-- Sorting Algorithm -->
+    <h2>6. Bubble Sort & Selection Sort</h2>
+    <button onclick="generateArray()">สร้างอาร์เรย์</button>
+    <p id="originalArray"></p>
+    <button onclick="sortWithBubble()">Bubble Sort</button>
+    <p id="bubbleSorted"></p>
+    <button onclick="sortWithSelection()">Selection Sort</button>
+    <p id="selectionSorted"></p>
+
+    <!-- Recursive Algorithm -->
+    <h2>7. Factorial</h2>
+    <input type="number" id="factorialInput" placeholder="ป้อนค่า n" />
+    <button onclick="calculateFactorial()">คำนวณ</button>
+    <p id="factorialResult"></p>
+
+    <h2>8. Fibonacci Sequence</h2>
+    <input type="number" id="fibonacciInput" placeholder="ป้อนค่า n" />
+    <button onclick="calculateFibonacci()">คำนวณ</button>
+    <p id="fibonacciResult"></p>
+
+    <!-- Debugging & Error Handling -->
+    <h2>9. ทดสอบ Debugging & Error Handling</h2>
+    <button onclick="testErrorHandling()">ทดสอบ</button>
+    <p id="errorMessage"></p>
+  </body>
+</html>
